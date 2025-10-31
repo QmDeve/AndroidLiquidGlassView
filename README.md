@@ -41,11 +41,6 @@
 
 ---
 
-## Demo experience
-[Download Demo](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/app/release/app-release.apk)
-
----
-
 ## Quick integration
 ### 1. Add Maven：
 **Add the following to `settings.gradle` in the project root directory:**
@@ -124,7 +119,7 @@ liquidGlassView.bind(content);
 | `setCornerRadiusPx(float px)`     | **Set the corner radius (px)**            | `-`           |
 | `setRefractionHeightDp(float dp)` | **Set the refraction height (dp)**        | `20dp`        |
 | `setRefractionHeightPx(float px)` | **Set the refraction height (px)**        | `-`           |
-| `setRefractionOffsetDp(float dp)` | **Set refraction offset (dp)**            | `-70dp`       |
+| `setRefractionOffsetDp(float dp)` | **Set refraction offset (dp)**            | `70dp`        |
 | `setRefractionOffsetPx(float px)` | **Set refraction offset (px)**            | `0`           |
 | `setTintColorRed(float red)`      | **Set the red tone (0f-1f)**              | `1.0f`        |
 | `setTintColorGreen(float green)`  | **Set the green tone (0f-1f)**            | `1.0f`        |
