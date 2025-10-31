@@ -1,0 +1,79 @@
+/**
+ * Copyright 2025 QmDeve
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @author QmDeve
+ * @github https://github.com/QmDeve
+ * @since 2025-11-01
+ */
+
+uniform shader image;
+uniform float2 size;
+uniform float cornerRadius;
+uniform float refractionHeight;
+uniform float refractionAmount;
+uniform float eccentricFactor;
+const half3 rgbToY = half3(0.2126, 0.7152, 0.0722);
+
+float sdRectangle(float2 coord, float2 halfSize) {
+    float2 d = abs(coord) - halfSize;
+    float outside = length(max(d, 0.0));
+    float inside = min(max(d.x, d.y), 0.0);
+    return outside + inside;
+}
+
+float sdRoundedRectangle(float2 coord, float2 halfSize, float r) {
+    float2 inner = halfSize - float2(r);
+    return sdRectangle(coord, inner) - r;
+}
+
+float2 gradSdRoundedRectangle(float2 coord, float2 halfSize, float r) {
+    float2 inner = halfSize - float2(r);
+    float2 cornerCoord = abs(coord) - inner;
+    if (cornerCoord.x >= 0.0 && cornerCoord.y >= 0.0) {
+        return sign(coord) * normalize(cornerCoord);
+    } else {
+        return sign(coord) * ((-cornerCoord.x < -cornerCoord.y) ? float2(1.0, 0.0) : float2(0.0, 1.0));
+    }
+}
+
+float circleMap(float x) {
+    return 1.0 - sqrt(1.0 - x * x);
+}
+
+half4 refractionColor(float2 coord, float2 size, float cornerRadius, float eccentricFactor, float height, float amount) {
+    float2 halfSize = size * 0.5;
+    float2 centeredCoord = coord - halfSize;
+    float sd = sdRoundedRectangle(centeredCoord, halfSize, cornerRadius);
+    sd = min(sd, 0.0);
+    if (sd <= 0.0 && -sd <= height) {
+        float maxGradRadius = max(min(halfSize.x, halfSize.y), cornerRadius);
+        float gradRadius = min(cornerRadius * 1.5, maxGradRadius);
+        float2 normal = gradSdRoundedRectangle(centeredCoord, halfSize, gradRadius);
+        float refractedDistance = circleMap(1.0 - -sd / height) * amount;
+        float2 refractedDirection = normalize(normal + eccentricFactor * normalize(centeredCoord));
+        float2 refractedCoord = coord + refractedDistance * refractedDirection;
+        if (refractedCoord.x < 0.0 || refractedCoord.x >= size.x || refractedCoord.y < 0.0 || refractedCoord.y >= size.y) {
+            return half4(0.0, 0.0, 0.0, 1.0);
+        }
+        return image.eval(refractedCoord);
+    } else {
+        return image.eval(coord);
+    }
+}
+
+half4 main(float2 coord) {
+    half4 color = refractionColor(coord, size, cornerRadius, eccentricFactor, refractionHeight, refractionAmount);
+    return color;
+}

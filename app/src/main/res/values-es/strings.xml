@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="blur_radius">Radio de Desenfoque</string>
+    <string name="offset">Desplazamiento de Refracción</string>
+    <string name="refraction">Altura de Refracción</string>
+    <string name="dispersion">Dispersión</string>
+    <string name="corner">Radio de Esquina</string>
+    <string name="custom_background">Fondo Personalizado</string>
+    <string name="tint_alpha">Alfa de Tinte</string>
+    <string name="setTint">Establecer Tinte</string>
+    <string name="a1">Su dispositivo no admite la selección de imágenes</string>
+    <string name="a2">AndroidLiquidGlassView utiliza AGSL, por lo que actualmente solo admite dispositivos Android 13+ (API 33)\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nGrupo de Telegram: https://t.me/QmDeves</string>
+</resources>

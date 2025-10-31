@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="blur_radius">نصف قطر التمويه</string>
+    <string name="offset">إزاحة الانكسار</string>
+    <string name="refraction">ارتفاع الانكسار</string>
+    <string name="dispersion">تشتت</string>
+    <string name="corner">نصف قطر الزاوية</string>
+    <string name="custom_background">خلفية مخصصة</string>
+    <string name="tint_alpha">شفافية اللون</string>
+    <string name="setTint">تعيين اللون</string>
+    <string name="a1">جهازك لا يدعم اختيار الصور</string>
+    <string name="a2">AndroidLiquidGlassView يستخدم AGSL، لذلك فهو يدعم حاليًا أجهزة Android 13+ (API 33) فقط\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nمجموعة Telegram: https://t.me/QmDeves</string>
+</resources>

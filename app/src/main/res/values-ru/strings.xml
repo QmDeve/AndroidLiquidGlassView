@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="blur_radius">Радиус размытия</string>
+    <string name="offset">Смещение преломления</string>
+    <string name="refraction">Высота преломления</string>
+    <string name="dispersion">Дисперсия</string>
+    <string name="corner">Радиус угла</string>
+    <string name="custom_background">Пользовательский фон</string>
+    <string name="tint_alpha">Альфа оттенка</string>
+    <string name="setTint">Установить оттенок</string>
+    <string name="a1">Ваше устройство не поддерживает выбор изображений</string>
+    <string name="a2">AndroidLiquidGlassView использует AGSL, поэтому в настоящее время поддерживает только устройства Android 13+ (API 33)\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nГруппа Telegram: https://t.me/QmDeves</string>
+</resources>

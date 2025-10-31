@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="blur_radius">흐림 반경</string>
+    <string name="offset">굴절 오프셋</string>
+    <string name="refraction">굴절 높이</string>
+    <string name="dispersion">분산</string>
+    <string name="corner">코너 반경</string>
+    <string name="custom_background">사용자 정의 배경</string>
+    <string name="tint_alpha">색조 알파</string>
+    <string name="setTint">색조 설정</string>
+    <string name="a1">기기가 이미지 선택을 지원하지 않습니다</string>
+    <string name="a2">AndroidLiquidGlassView는 AGSL을 사용하므로 현재 Android 13+ (API 33) 기기만 지원합니다\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nTelegram 그룹: https://t.me/QmDeves</string>
+</resources>

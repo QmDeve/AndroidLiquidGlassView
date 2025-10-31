@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="blur_radius">模糊半径</string>
+    <string name="offset">折射偏移</string>
+    <string name="refraction">折射高度</string>
+    <string name="dispersion">色散</string>
+    <string name="corner">圆角半径</string>
+    <string name="custom_background">自定义背景</string>
+    <string name="tint_alpha">色调透明度</string>
+    <string name="setTint">设置色调</string>
+    <string name="a1">您的设备不支持选择图片</string>
+    <string name="a2">AndroidLiquidGlassView 使用了 AGSL，所以目前仅支持 Android 13+ (API 33) 设备\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nQQ交流群：1046829337</string>
+</resources>

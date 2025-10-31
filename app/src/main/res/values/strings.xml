@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidLiquidGlassView</string>
+    <string name="blur_radius">Blur Radius</string>
+    <string name="offset">Refraction Offset</string>
+    <string name="refraction">Refraction Height</string>
+    <string name="dispersion">Dispersion</string>
+    <string name="corner">Corner Radius</string>
+    <string name="custom_background">Custom Background</string>
+    <string name="tint_alpha">Tint Alpha</string>
+    <string name="setTint">Set Tint</string>
+    <string name="a1">Your device does not support image selection</string>
+    <string name="a2">AndroidLiquidGlassView uses AGSL, so it currently only supports Android 13+ (API 33) devices\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nTelegram Group: https://t.me/QmDeves</string>
+</resources>

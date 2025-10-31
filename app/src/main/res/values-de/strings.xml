@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="blur_radius">Unschärferadius</string>
+    <string name="offset">Brechungsversatz</string>
+    <string name="refraction">Brechungshöhe</string>
+    <string name="dispersion">Dispersion</string>
+    <string name="corner">Eckenradius</string>
+    <string name="custom_background">Benutzerdefinierter Hintergrund</string>
+    <string name="tint_alpha">Farbton-Alpha</string>
+    <string name="setTint">Farbton festlegen</string>
+    <string name="a1">Ihr Gerät unterstützt keine Bildauswahl</string>
+    <string name="a2">AndroidLiquidGlassView verwendet AGSL und unterstützt daher derzeit nur Android 13+ (API 33) Geräte\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nTelegram-Gruppe: https://t.me/QmDeves</string>
+</resources>
