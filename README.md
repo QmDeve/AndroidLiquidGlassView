@@ -41,6 +41,14 @@
 
 ---
 
+
+## Demo experience
+[Download Demo](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/app/release/app-release.apk)
+
+---
+
+
+
 ## Quick integration
 ### 1. Add Maven：
 **Add the following to `settings.gradle` in the project root directory:**
