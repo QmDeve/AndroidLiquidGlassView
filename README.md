@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/badge/Android-13.0%2B-brightgreen.svg" alt="Android 5"/>
   <img src="https://img.shields.io/badge/targetSdk-36-green" alt="targetSdk"/>
   <img src="https://img.shields.io/badge/🚀-Feature-purple" alt="Feature"/>
-  <img src="https://img.shields.io/badge/Version-v0.0.1-alpha01-blue" alt="Version"/>
   <img src="https://jitpack.io/v/QmDeve/AndroidLiquidGlassView.svg" alt="Jitpack"/>
   <img src="https://img.shields.io/github/stars/QmDeve/AndroidLiquidGlassView" alt="Stars"/>
 
