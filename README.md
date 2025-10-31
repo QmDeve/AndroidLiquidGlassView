@@ -1,7 +1,7 @@
 <div align="center">
 
 ## AndroidLiquidGlassView
-**AndroidLiquidGlassView: An Android View library that adds realistic liquid refraction and distortion effects to your app's UI**
+**AndroidLiquidGlassView: Android Liquid Glass View Library, Real Refraction and Dispersion Effects**
 
 <br>
 <br>
@@ -26,7 +26,6 @@
 ## Characteristic
  - **Realistic `liquid glass` effect - Physically-based `refraction` and `dispersion` effects**
  - **Highly customizable - supports adjustment of rounded corners, refraction parameters, tone, etc.**
- - **Android 13+ native support - using the latest `AGSL` technology**
 
 ---
 
@@ -46,7 +45,6 @@
 [Download Demo](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/app/release/app-release.apk)
 
 ---
-
 
 
 ## Quick integration
