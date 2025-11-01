@@ -65,7 +65,7 @@ dependencyResolutionManagement {
 **Add the following to the module's `build.gradle`:**
 ```gradle
 dependencies {
-   implementation 'com.github.QmDeve:AndroidLiquidGlassView:v0.0.1-alpha02'
+   implementation 'com.github.QmDeve:AndroidLiquidGlassView:v0.0.1-alpha03'
 }
 ```
 
