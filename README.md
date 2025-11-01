@@ -40,7 +40,6 @@
 
 ---
 
-
 ## Demo experience
 [Download Demo](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/app/release/app-release.apk)
 
@@ -65,7 +64,7 @@ dependencyResolutionManagement {
 **Add the following to the module's `build.gradle`:**
 ```gradle
 dependencies {
-   implementation 'com.github.QmDeve:AndroidLiquidGlassView:v0.0.1-alpha03'
+   implementation 'com.github.QmDeve:AndroidLiquidGlassView:v0.0.1-alpha04'
 }
 ```
 
