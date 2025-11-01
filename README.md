@@ -1,7 +1,7 @@
 <div align="center">
 
 ## AndroidLiquidGlassView
-**AndroidLiquidGlassView: An Android View library that adds realistic liquid refraction and distortion effects to your app's UI**
+**Android Liquid Glass View Library, Real Refraction and Dispersion Effects**
 
 <br>
 <br>
@@ -26,7 +26,6 @@
 ## Characteristic
  - **Realistic `liquid glass` effect - Physically-based `refraction` and `dispersion` effects**
  - **Highly customizable - supports adjustment of rounded corners, refraction parameters, tone, etc.**
- - **Android 13+ native support - using the latest `AGSL` technology**
 
 ---
 
@@ -66,7 +65,7 @@ dependencyResolutionManagement {
 **Add the following to the module's `build.gradle`:**
 ```gradle
 dependencies {
-   implementation 'com.github.QmDeve:AndroidLiquidGlassView:v0.0.1-alpha01'
+   implementation 'com.github.QmDeve:AndroidLiquidGlassView:v0.0.1-alpha02'
 }
 ```
 
@@ -120,22 +119,19 @@ liquidGlassView.bind(content);
 ```
 
 ## API Reference
-| Method                            | Description                               | Default Value |
-|-----------------------------------|-------------------------------------------|---------------|
-| `bind(ViewGroup source)`          | **Bind sampling source**                  | `-`           |
-| `setCornerRadiusDp(float dp)`     | **Set the corner radius (dp)**            | `40dp`        |
-| `setCornerRadiusPx(float px)`     | **Set the corner radius (px)**            | `-`           |
-| `setRefractionHeightDp(float dp)` | **Set the refraction height (dp)**        | `20dp`        |
-| `setRefractionHeightPx(float px)` | **Set the refraction height (px)**        | `-`           |
-| `setRefractionOffsetDp(float dp)` | **Set refraction offset (dp)**            | `70dp`        |
-| `setRefractionOffsetPx(float px)` | **Set refraction offset (px)**            | `0`           |
-| `setTintColorRed(float red)`      | **Set the red tone (0f-1f)**              | `1.0f`        |
-| `setTintColorGreen(float green)`  | **Set the green tone (0f-1f)**            | `1.0f`        |
-| `setTintColorBlue(float blue)`    | **Set the blue tone (0f-1f)**             | `1.0f`        |
-| `setTintAlpha(float alpha)`       | **Set Tint transparency (0f-1f)**         | `0.0f`        |
-| `setDispersion(float dispersion)` | **Set the dispersion effect (0f-1f)**     | `0.5f`        |
-| `setBlurRadius(float radius)`     | **Set the blur radius**                   | `0f`          |
-| `setDraggable(boolean enable)`    | **Enable/disable drag-and-drop function** | `true`        |
+| Method                            | Description                                    | Default Value |
+|-----------------------------------|------------------------------------------------|---------------|
+| `bind(ViewGroup source)`          | **Bind sampling source**                       | `-`           |
+| `setCornerRadius(float px)`       | **Set the corner radius (px) (0dp-99dp)**      | `40dp`        |
+| `setRefractionHeight(float px)`   | **Set the refraction height (px) (12dp-50dp)** | `20dp`        |
+| `setRefractionOffset(float px)`   | **Set refraction offset (px) (20dp-120dp)**    | `70dp`        |
+| `setTintColorRed(float red)`      | **Set the red tone (0f-1f)**                   | `1.0f`        |
+| `setTintColorGreen(float green)`  | **Set the green tone (0f-1f)**                 | `1.0f`        |
+| `setTintColorBlue(float blue)`    | **Set the blue tone (0f-1f)**                  | `1.0f`        |
+| `setTintAlpha(float alpha)`       | **Set Tint transparency (0f-1f)**              | `0.0f`        |
+| `setDispersion(float dispersion)` | **Set the dispersion effect (0f-1f)**          | `0.5f`        |
+| `setBlurRadius(float radius)`     | **Set the blur radius (0dp-50dp)**             | `0f`          |
+| `setDraggable(boolean enable)`    | **Enable/disable drag-and-drop function**      | `true`        |
 
 ---
 

@@ -156,19 +156,19 @@ public class MainActivity extends AppCompatActivity {
 
         setCorners.addOnChangeListener((slider, v, b) -> {
             if (b) {
-                liquidGlassView.setCornerRadiusDp(v);
+                liquidGlassView.setCornerRadius(Utils.dp2px(getResources(), v));
             }
         });
 
         setRefractionHeight.addOnChangeListener((slider, v, b) -> {
             if (b) {
-                liquidGlassView.setRefractionHeightDp(v);
+                liquidGlassView.setRefractionHeight(Utils.dp2px(getResources(), v));
             }
         });
 
         setRefractionOffset.addOnChangeListener((slider, v, b) -> {
             if (b) {
-                liquidGlassView.setRefractionOffsetDp(v);
+                liquidGlassView.setRefractionOffset(Utils.dp2px(getResources(), v));
             }
         });
 

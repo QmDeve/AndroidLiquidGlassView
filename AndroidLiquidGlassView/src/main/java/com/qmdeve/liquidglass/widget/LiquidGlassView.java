@@ -77,12 +77,21 @@ public class LiquidGlassView extends FrameLayout {
     }
 
     /**
-     * Set the corner radius dp
-     *
-     * @param dp float
+     * @Deprecated Please use the {@link #setCornerRadius} method
      */
+    @Deprecated(since = "v0.0.1-alpha02", forRemoval = true)
     public void setCornerRadiusDp(float dp) {
-        setCornerRadiusPx(Utils.dp2px(getResources(), dp));
+        setCornerRadius(Utils.dp2px(getResources(), Math.max(0, Math.min(dp, 99))));
+        updateConfig();
+    }
+
+    /**
+     * @Deprecated Please use the {@link #setCornerRadius} method
+     */
+    @Deprecated(since = "v0.0.1-alpha02", forRemoval = true)
+    public void setCornerRadiusPx(float px) {
+        float maxPx = Utils.dp2px(getResources(), 99);
+        this.cornerRadius = Math.max(0, Math.min(px, maxPx));
         updateConfig();
     }
 
@@ -91,26 +100,25 @@ public class LiquidGlassView extends FrameLayout {
      *
      * @param px float
      */
-    public void setCornerRadiusPx(float px) {
-        this.cornerRadius = px;
+    public void setCornerRadius(float px) {
+        float maxPx = Utils.dp2px(getResources(), 99);
+        this.cornerRadius = Math.max(0, Math.min(px, maxPx));
         updateConfig();
     }
 
     /**
-     * Set the refraction height dp
-     *
-     * @param dp float
+     * @Deprecated Please use the {@link #setRefractionHeight} method
      */
+    @Deprecated(since = "v0.0.1-alpha02", forRemoval = true)
     public void setRefractionHeightDp(float dp) {
-        setRefractionHeightPx(Utils.dp2px(getResources(), dp));
+        setRefractionHeight(Utils.dp2px(getResources(), dp));
         updateConfig();
     }
 
     /**
-     * Set the refraction height px
-     *
-     * @param px float
+     * @Deprecated Please use the {@link #setRefractionHeight} method
      */
+    @Deprecated(since = "v0.0.1-alpha02", forRemoval = true)
     public void setRefractionHeightPx(float px) {
         float minPx = Utils.dp2px(getResources(), 12);
         float maxPx = Utils.dp2px(getResources(), 50);
@@ -119,13 +127,36 @@ public class LiquidGlassView extends FrameLayout {
     }
 
     /**
-     * Set the refraction offset dp
-     * Positive value will be converted to negative
+     * Set the refraction height px
      *
-     * @param dp float
+     * @param px float
      */
+    public void setRefractionHeight(float px) {
+        float minPx = Utils.dp2px(getResources(), 12);
+        float maxPx = Utils.dp2px(getResources(), 50);
+        this.refractionHeight = Math.max(minPx, Math.min(maxPx, px));
+        updateConfig();
+    }
+
+
+    /**
+     * @Deprecated {@link #setRefractionOffset}
+     */
+    @Deprecated(since = "v0.0.1-alpha02", forRemoval = true)
     public void setRefractionOffsetDp(float dp) {
-        setRefractionOffsetPx(Utils.dp2px(getResources(), dp));
+        setRefractionOffset(Utils.dp2px(getResources(), dp));
+        updateConfig();
+    }
+
+    /**
+     * @Deprecated Please use the {@link #setRefractionOffset}
+     */
+    @Deprecated(since = "v0.0.1-alpha02", forRemoval = true)
+    public void setRefractionOffsetPx(float px) {
+        float minPx = Utils.dp2px(getResources(), 20);
+        float maxPx = Utils.dp2px(getResources(), 120);
+        px = Math.max(minPx, Math.min(maxPx, px));
+        this.refractionOffset = -px;
         updateConfig();
     }
 
@@ -135,7 +166,7 @@ public class LiquidGlassView extends FrameLayout {
      *
      * @param px float
      */
-    public void setRefractionOffsetPx(float px) {
+    public void setRefractionOffset(float px) {
         float minPx = Utils.dp2px(getResources(), 20);
         float maxPx = Utils.dp2px(getResources(), 120);
         px = Math.max(minPx, Math.min(maxPx, px));
