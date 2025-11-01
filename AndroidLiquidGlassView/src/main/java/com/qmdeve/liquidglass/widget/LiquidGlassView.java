@@ -49,12 +49,14 @@ public class LiquidGlassView extends FrameLayout {
 
     public LiquidGlassView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        setLayerType(LAYER_TYPE_HARDWARE, null);
         this.context = context;
         init();
     }
 
     public LiquidGlassView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setLayerType(LAYER_TYPE_HARDWARE, null);
         this.context = context;
         init();
     }

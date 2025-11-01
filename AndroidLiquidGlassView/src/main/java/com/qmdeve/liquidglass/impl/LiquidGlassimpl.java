@@ -161,6 +161,9 @@ public final class LiquidGlassimpl implements Impl {
 
     @Override
     public void draw(Canvas canvas) {
+        if (!canvas.isHardwareAccelerated()) {
+            return;
+        }
         canvas.drawRenderNode(node);
     }
 
