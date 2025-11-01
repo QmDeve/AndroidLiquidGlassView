@@ -15,7 +15,7 @@
  *
  * @author QmDeve
  * @github https://github.com/QmDeve
- * @since 2025-11-01
+ * @since 2025-11-02
  */
 
 package com.qmdeve.liquidglass.impl;
@@ -50,17 +50,23 @@ public final class LiquidGlassimpl implements Impl {
     private final int[] tp = new int[2];
     private final int[] hp = new int[2];
     private final RuntimeShader refractionShader, materialShader, dispersionShader, tintShader;
-    private float lastCornerRadius, lastEccentricFactor, lastRefractionHeight, lastRefractionAmount, lastContrast, lastWhitePoint, lastChromaMultiplier, lastSigma, lastChromaticAberration, lastDepthEffect, lastBlurLevel, lastTintRed, lastTintGreen, lastTintBlue, lastTintAlpha;
+
+    private float lastCornerRadius, lastEccentricFactor, lastRefractionHeight, lastRefractionAmount,
+            lastContrast, lastWhitePoint, lastChromaMultiplier, lastSigma,
+            lastChromaticAberration, lastDepthEffect, lastBlurLevel,
+            lastTintRed, lastTintGreen, lastTintBlue, lastTintAlpha;
+
     private boolean needsUpdate = true;
+    private long lastBlurUpdateTime = 0;
 
     public LiquidGlassimpl(View host, View target) {
         this.host = host;
         this.target = target;
         this.node = new RenderNode("AndroidLiquidGlassView");
-        this.refractionShader = loadagsl(target.getResources(), R.raw.liquidglass_refraction_effect);
-        this.materialShader = loadagsl(target.getResources(), R.raw.liquidglass_material_effect);
-        this.dispersionShader = loadagsl(target.getResources(), R.raw.liquidglass_dispersion_effect);
-        this.tintShader = loadagsl(target.getResources(), R.raw.liquidglass_tint_effect);
+        this.refractionShader = loadAgsl(target.getResources(), R.raw.liquidglass_refraction_effect);
+        this.materialShader = loadAgsl(target.getResources(), R.raw.liquidglass_material_effect);
+        this.dispersionShader = loadAgsl(target.getResources(), R.raw.liquidglass_dispersion_effect);
+        this.tintShader = loadAgsl(target.getResources(), R.raw.liquidglass_tint_effect);
 
         lastCornerRadius = Float.NaN;
         lastEccentricFactor = Float.NaN;
@@ -99,7 +105,6 @@ public final class LiquidGlassimpl implements Impl {
         float contrast = Config.CONTRAST;
         float whitePoint = Config.WHITE_POINT;
         float chromaMultiplier = Config.CHROMA_MULTIPLIER;
-        float sigma = 0;
         float blurLevel = Config.BLUR_RADIUS;
         float chromaticAberration = Config.DISPERSION;
         float depthEffect = Config.DEPTH_EFFECT;
@@ -116,7 +121,6 @@ public final class LiquidGlassimpl implements Impl {
                         lastContrast != contrast ||
                         lastWhitePoint != whitePoint ||
                         lastChromaMultiplier != chromaMultiplier ||
-                        lastSigma != sigma ||
                         lastBlurLevel != blurLevel ||
                         lastChromaticAberration != chromaticAberration ||
                         lastDepthEffect != depthEffect ||
@@ -134,7 +138,6 @@ public final class LiquidGlassimpl implements Impl {
             lastContrast = contrast;
             lastWhitePoint = whitePoint;
             lastChromaMultiplier = chromaMultiplier;
-            lastSigma = sigma;
             lastBlurLevel = blurLevel;
             lastChromaticAberration = chromaticAberration;
             lastDepthEffect = depthEffect;
@@ -161,9 +164,7 @@ public final class LiquidGlassimpl implements Impl {
 
     @Override
     public void draw(Canvas canvas) {
-        if (!canvas.isHardwareAccelerated()) {
-            return;
-        }
+        if (!canvas.isHardwareAccelerated()) return;
         canvas.drawRenderNode(node);
     }
 
@@ -179,7 +180,7 @@ public final class LiquidGlassimpl implements Impl {
         float contrast = Config.CONTRAST;
         float whitePoint = Config.WHITE_POINT;
         float chromaMultiplier = Config.CHROMA_MULTIPLIER;
-        float blurLevel = Config.BLUR_RADIUS;
+        float blurLevel = Math.max(0f, Config.BLUR_RADIUS);
         float chromaticAberration = Config.DISPERSION;
         float depthEffect = Config.DEPTH_EFFECT;
         float tintRed = Config.TINT_COLOR_RED;
@@ -192,20 +193,21 @@ public final class LiquidGlassimpl implements Impl {
                 cornerRadiusPx, cornerRadiusPx, cornerRadiusPx, cornerRadiusPx
         };
 
-        RenderEffect contentEffect;
-
-        boolean needNewBlur = cachedBlurEffect == null || Float.isNaN(lastSigma) || blurLevel != lastSigma;
-
-        if (needNewBlur) {
-            try {
-                contentEffect = RenderEffect.createBlurEffect(blurLevel, blurLevel, Shader.TileMode.CLAMP);
-                cachedBlurEffect = contentEffect;
-                lastSigma = blurLevel;
-            } catch (Exception e) {
+        RenderEffect contentEffect = null;
+        if (blurLevel > 0.01f) {
+            long now = System.currentTimeMillis();
+            if (cachedBlurEffect == null || Math.abs(blurLevel - lastSigma) > 0.3f || now - lastBlurUpdateTime > 120) {
+                try {
+                    contentEffect = RenderEffect.createBlurEffect(blurLevel, blurLevel, Shader.TileMode.CLAMP);
+                    cachedBlurEffect = contentEffect;
+                    lastSigma = blurLevel;
+                    lastBlurUpdateTime = now;
+                } catch (Exception e) {
+                    contentEffect = cachedBlurEffect;
+                }
+            } else {
                 contentEffect = cachedBlurEffect;
             }
-        } else {
-            contentEffect = cachedBlurEffect;
         }
 
         refractionShader.setFloatUniform("size", size);
@@ -218,14 +220,11 @@ public final class LiquidGlassimpl implements Impl {
         RenderEffect refractionChain = (contentEffect != null)
                 ? RenderEffect.createChainEffect(refraction, contentEffect)
                 : refraction;
-
         materialShader.setFloatUniform("contrast", contrast);
         materialShader.setFloatUniform("whitePoint", whitePoint);
         materialShader.setFloatUniform("chromaMultiplier", chromaMultiplier);
-
         RenderEffect material = RenderEffect.createRuntimeShaderEffect(materialShader, "image");
         RenderEffect materialChain = RenderEffect.createChainEffect(material, refractionChain);
-
         dispersionShader.setFloatUniform("size", size);
         dispersionShader.setFloatUniform("offset", offset);
         dispersionShader.setFloatUniform("cornerRadii", cornerRadii);
@@ -233,12 +232,9 @@ public final class LiquidGlassimpl implements Impl {
         dispersionShader.setFloatUniform("refractionAmount", refractionAmount);
         dispersionShader.setFloatUniform("depthEffect", depthEffect);
         dispersionShader.setFloatUniform("chromaticAberration", chromaticAberration);
-
         RenderEffect chromaEffect = RenderEffect.createRuntimeShaderEffect(dispersionShader, "content");
-
         tintShader.setFloatUniform("tintColor", new float[]{tintRed, tintGreen, tintBlue});
         tintShader.setFloatUniform("tintAlpha", tintAlpha);
-
         RenderEffect tintEffect = RenderEffect.createRuntimeShaderEffect(tintShader, "content");
         RenderEffect chainAfterChroma = RenderEffect.createChainEffect(tintEffect, chromaEffect);
         RenderEffect finalChain = RenderEffect.createChainEffect(chainAfterChroma, materialChain);
@@ -246,28 +242,23 @@ public final class LiquidGlassimpl implements Impl {
         node.setRenderEffect(finalChain);
     }
 
-    private RuntimeShader loadagsl(Resources resources, int resourceId) {
+    private RuntimeShader loadAgsl(Resources resources, int resourceId) {
         @Language("AGSL")
         String shaderCode = loadRaw(resources, resourceId);
         return new RuntimeShader(shaderCode);
     }
 
     private String loadRaw(Resources resources, int resourceId) {
-        try {
-            InputStream inputStream = resources.openRawResource(resourceId);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            StringBuilder stringBuilder = new StringBuilder();
+        try (InputStream inputStream = resources.openRawResource(resourceId);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            StringBuilder sb = new StringBuilder();
             String line;
-
             while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line).append("\n");
+                sb.append(line).append('\n');
             }
-
-            reader.close();
-            inputStream.close();
-            return stringBuilder.toString();
+            return sb.toString();
         } catch (IOException e) {
-            throw new RuntimeException("Error: " + resources.getResourceEntryName(resourceId), e);
+            throw new RuntimeException("Error loading shader: " + resourceId, e);
         }
     }
 }
