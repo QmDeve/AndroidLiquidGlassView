@@ -37,7 +37,7 @@ public class LiquidGlassView extends FrameLayout {
     private LiquidGlass glass;
     private ViewGroup customSource;
     private final Context context;
-    private float cornerRadius = Utils.dp2px(getResources(), 40), refractionHeight = Utils.dp2px(getResources(), 20), refractionOffset = -Utils.dp2px(getResources(), 70), tintAlpha = 0.0f, tintColorRed = 1.0f, tintColorGreen = 1.0f, tintColorBlue = 1.0f, blurRadius = 0f, dispersion = 0.5f, downX, downY, startTx, startTy;
+    private float cornerRadius = Utils.dp2px(getResources(), 40), refractionHeight = Utils.dp2px(getResources(), 20), refractionOffset = -Utils.dp2px(getResources(), 70), tintAlpha = 0.0f, tintColorRed = 1.0f, tintColorGreen = 1.0f, tintColorBlue = 1.0f, blurRadius = 0.01f, dispersion = 0.5f, downX, downY, startTx, startTy;
     private boolean draggable = true;
 
     public LiquidGlassView(Context context) {
@@ -232,7 +232,7 @@ public class LiquidGlassView extends FrameLayout {
      * @param radius float
      */
     public void setBlurRadius(float radius) {
-        this.blurRadius = Math.max(0, Math.min(50, radius));
+        this.blurRadius = Math.max(0.01f, Math.min(50, radius));
         updateConfig();
     }
 
