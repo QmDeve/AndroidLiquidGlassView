@@ -33,7 +33,7 @@
 
 ## 预览
 
-<img src="https://cloud.qmdeve.com/f/JaIw/img1.png" alt="Image"/>
+<img src="https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/image.jpg?raw=true" alt="Image"/>
 
 ## Demo 演示
 [下载 Demo](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/app/release/app-release.apk)
@@ -60,7 +60,7 @@ dependencies {
 
 ## Star History
 
-[![Star History](https://starchart.qmdeve.com/QmDeve/AndroidLiquidGlassView.svg?variant=adaptive)](https://starchart.qmdeve.com/QmDeve/AndroidLiquidGlassView)
+[![Star History](https://starchart.cc/QmDeve/AndroidLiquidGlassView.svg?variant=adaptive)](https://github.com/QmDeve/AndroidLiquidGlassView)
 
 ## 我的开源项目
 
