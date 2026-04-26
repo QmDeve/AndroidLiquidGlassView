@@ -1,9 +1,9 @@
 [versions]
-agp = "8.13.2"
+agp = "9.1.1"
 appcompat = "1.7.1"
 dynamicanimation = "1.1.0"
-material = "1.14.0-alpha09"
-annotationJvm = "1.9.1"
+material = "1.14.0-beta01"
+annotationJvm = "1.10.0"
 qmblurview = "1.1.4"
 vanniktech = "0.36.0"
 

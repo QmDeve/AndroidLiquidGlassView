@@ -8,11 +8,13 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://GitHub.com/QmDeve/AndroidLiquidGlassView/)
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/LICENSE)
-[![Android-13](https://img.shields.io/badge/Android-13.0%2B-brightgreen.svg)](https://github.com/QmDeve/AndroidLiquidGlassView)
+[![Android-13](https://img.shields.io/badge/Android-13%2B-brightgreen.svg)](https://github.com/QmDeve/AndroidLiquidGlassView)
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.qmdeve.liquidglass/core?label=Maven%20Central)](https://central.sonatype.com/artifact/com.qmdeve.liquidglass/core)
 [![JitPack](https://jitpack.io/v/com.qmdeve/AndroidLiquidGlassView.svg)](https://jitpack.io/#com.qmdeve/AndroidLiquidGlassView)
-[![GitHub Releases](https://img.shields.io/github/release/QmDeve/AndroidLiquidGlassView?label=GitHub%20Releases)](https://github.com/QmDeve/AndroidLiquidGlassView/releases)
+
+[![Telegram Groups](https://img.shields.io/badge/Telegram%20Groups-2CA5E0?style=brightgreen&logo=telegram&logoColor=white)](https://t.me/QmDeve)
+[![XChat Groups](https://img.shields.io/badge/XChat%20Groups-202020?style=brightgreen&logo=x&logoColor=white)](https://x.com/i/chat/group_join/g2048366788006846529/LNvKUQelO9)
 
 </div>
 
@@ -39,7 +41,7 @@ Add the dependencies to your module's `build.gradle` file:
 
 ```gradle
 dependencies {
-   implementation 'com.qmdeve.liquidglass:core:1.0.3'
+   implementation 'com.qmdeve.liquidglass:core:1.0.4'
 }
 ```
 
@@ -58,8 +60,6 @@ Please refer to the documentation to learn how to use the library
 ## My Other Projects
 
 - **[QmBlurView](https://blurview.qmdeve.com)**
-- **[Personal Homepage](https://github.com/QmDeve/personal-homepage)**
-- **[Qm Authenticator for Android](https://github.com/Rouneant/Qm-Authenticator-for-Android)**
 
 ## License
 ```

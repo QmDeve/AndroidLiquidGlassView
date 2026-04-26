@@ -12,7 +12,9 @@
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.qmdeve.liquidglass/core?label=Maven%20Central)](https://central.sonatype.com/artifact/com.qmdeve.liquidglass/core)
 [![JitPack](https://jitpack.io/v/com.qmdeve/AndroidLiquidGlassView.svg)](https://jitpack.io/#com.qmdeve/AndroidLiquidGlassView)
-[![GitHub Releases](https://img.shields.io/github/release/QmDeve/AndroidLiquidGlassView?label=GitHub%20Releases)](https://github.com/QmDeve/AndroidLiquidGlassView/releases)
+
+[![QQ Groups](https://img.shields.io/badge/QQ%20Groups-2CA5E0?style=brightgreen&logo=qq&logoColor=white)](https://qm.qq.com/q/HqzL7A8hCE)
+[![XChat Groups](https://img.shields.io/badge/XChat%20Groups-202020?style=brightgreen&logo=x&logoColor=white)](https://x.com/i/chat/group_join/g2048366788006846529/LNvKUQelO9)
 
 <br>
 <br>
@@ -46,7 +48,7 @@
 
 ```gradle
 dependencies {
-   implementation 'com.qmdeve.liquidglass:core:1.0.3'
+   implementation 'com.qmdeve.liquidglass:core:1.0.4'
 }
 ```
 
@@ -65,8 +67,6 @@ dependencies {
 ## 我的开源项目
 
 - **[QmBlurView](https://blurview.qmdeve.com)**
-- **[Personal Homepage](https://github.com/QmDeve/personal-homepage)**
-- **[Qm Authenticator for Android](https://github.com/Rouneant/Qm-Authenticator-for-Android)**
 
 ---
 
