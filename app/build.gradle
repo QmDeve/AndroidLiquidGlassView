@@ -36,16 +36,14 @@ plugins {
 
 android {
     namespace 'com.qmdeve.liquidglass.demo'
-    compileSdk { version = release(36) }
+    compileSdk { version = release(37) }
 
     defaultConfig {
         applicationId "com.qmdeve.liquidglass.demo"
         minSdk { version = release(24) }
-        targetSdk { version = release(36) }
+        targetSdk { version = release(37) }
         versionCode 1
         versionName VERSION
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
