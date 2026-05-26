@@ -13,9 +13,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.qmdeve.liquidglass/core?label=Maven%20Central)](https://central.sonatype.com/artifact/com.qmdeve.liquidglass/core)
 [![JitPack](https://jitpack.io/v/com.qmdeve/AndroidLiquidGlassView.svg)](https://jitpack.io/#com.qmdeve/AndroidLiquidGlassView)
 
-[![QQ Groups](https://img.shields.io/badge/QQ%20Groups-2CA5E0?style=brightgreen&logo=qq&logoColor=white)](https://qm.qq.com/q/HqzL7A8hCE)
-[![XChat Groups](https://img.shields.io/badge/XChat%20Groups-202020?style=brightgreen&logo=x&logoColor=white)](https://x.com/i/chat/group_join/g2048366788006846529/LNvKUQelO9)
-
 <br>
 <br>
 
@@ -63,10 +60,6 @@ dependencies {
 ## Star History
 
 [![Star History](https://starchart.cc/QmDeve/AndroidLiquidGlassView.svg?variant=adaptive)](https://github.com/QmDeve/AndroidLiquidGlassView)
-
-## 我的开源项目
-
-- **[QmBlurView](https://blurview.qmdeve.com)**
 
 ---
 
