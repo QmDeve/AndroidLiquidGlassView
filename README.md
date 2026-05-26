@@ -13,9 +13,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.qmdeve.liquidglass/core?label=Maven%20Central)](https://central.sonatype.com/artifact/com.qmdeve.liquidglass/core)
 [![JitPack](https://jitpack.io/v/com.qmdeve/AndroidLiquidGlassView.svg)](https://jitpack.io/#com.qmdeve/AndroidLiquidGlassView)
 
-[![Telegram Groups](https://img.shields.io/badge/Telegram%20Groups-2CA5E0?style=brightgreen&logo=telegram&logoColor=white)](https://t.me/QmDeve)
-[![XChat Groups](https://img.shields.io/badge/XChat%20Groups-202020?style=brightgreen&logo=x&logoColor=white)](https://x.com/i/chat/group_join/g2048366788006846529/LNvKUQelO9)
-
 </div>
 
 ## Characteristic
@@ -56,10 +53,6 @@ Please refer to the documentation to learn how to use the library
 ## Star History
 
 [![Star History](https://starchart.cc/QmDeve/AndroidLiquidGlassView.svg?variant=adaptive)](https://github.com/QmDeve/AndroidLiquidGlassView)
-
-## My Other Projects
-
-- **[QmBlurView](https://blurview.qmdeve.com)**
 
 ## License
 ```
