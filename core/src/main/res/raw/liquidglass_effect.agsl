@@ -68,10 +68,31 @@ float sdRoundedRect(float2 coord, float2 halfSize, float radius) {
     return outside + inside;
 }
 
+float safeSign(float value) {
+    return value < 0.0 ? -1.0 : 1.0;
+}
+
+float2 safeNormalize(float2 value, float2 fallback) {
+    float len = length(value);
+    if (len > 0.001) {
+        return value / len;
+    }
+    return fallback;
+}
+
 float2 gradSdRoundedRect(float2 coord, float2 halfSize, float radius) {
     float2 cornerCoord = abs(coord) - (halfSize - float2(radius));
     if (cornerCoord.x >= 0.0 || cornerCoord.y >= 0.0) {
-        return sign(coord) * normalize(max(cornerCoord, 0.0));
+        float2 outside = max(cornerCoord, 0.0);
+        float outsideLength = length(outside);
+        if (outsideLength > 0.001) {
+            return sign(coord) * (outside / outsideLength);
+        }
+        float useX = step(cornerCoord.y, cornerCoord.x);
+        return float2(
+            useX * safeSign(coord.x),
+            (1.0 - useX) * safeSign(coord.y)
+        );
     } else {
         float gradX = step(cornerCoord.y, cornerCoord.x);
         return sign(coord) * float2(gradX, 1.0 - gradX);
@@ -113,7 +134,9 @@ half4 main(float2 coord) {
     float smoothRadius = max(radius * 1.5, 30.0);
     float gradRadius = min(smoothRadius, min(halfSize.x, halfSize.y));
 
-    float2 grad = normalize(gradSdRoundedRect(centeredCoord, halfSize, gradRadius) + depthEffect * normalize(centeredCoord));
+    float2 shapeGrad = gradSdRoundedRect(centeredCoord, halfSize, gradRadius);
+    float2 depthGrad = safeNormalize(centeredCoord, shapeGrad);
+    float2 grad = safeNormalize(shapeGrad + depthEffect * depthGrad, shapeGrad);
 
     float2 refractedCoord = coord + d * grad;
     float dispersionIntensity = chromaticAberration * ((centeredCoord.x * centeredCoord.y) / (halfSize.x * halfSize.y));
