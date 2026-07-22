@@ -57,12 +57,6 @@ dependencies {
 
 ---
 
-## Star History
-
-[![Star History](https://starchart.cc/QmDeve/AndroidLiquidGlassView.svg?variant=adaptive)](https://github.com/QmDeve/AndroidLiquidGlassView)
-
----
-
 ## License
 ```
 Copyright ©️ 2025-2026 Donny Yang
