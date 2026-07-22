@@ -50,10 +50,6 @@ Please refer to the documentation to learn how to use the library
 
 ---
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/chart?repos=QmDeve/AndroidLiquidGlassView&type=date&legend=bottom-right&sealed_token=Glh1EOvmamPiOZweuck3qGGVsvdRUVhFkEl8vszfs2p68t-z1JI3mDEQp00uwsN9HvRudLbSf8YOFfpD_42FSZxQXRrYTcH3P2deBfi5VGYCMhwK3syWzdu5dTEOmSmqiWTz5X8owz0Y-Qstpk3ZFN1FHepCao8bJbjpvFkVXWKVN-aSX4grb_WaahSY)](https://www.star-history.com/?repos=QmDeve%2FAndroidLiquidGlassView&type=date&legend=bottom-right)
-
 ## License
 ```
 Copyright ©️ 2025-2026 Donny Yang
