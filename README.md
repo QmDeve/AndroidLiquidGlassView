@@ -27,9 +27,6 @@ On devices below <strong>Android 13</strong>, the view will maintain a transpare
 
 <img src="https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/image.jpg?raw=true" alt="Image"/>
 
-## Demo experience
-**[Download Demo](./app/release/app-release.apk)**
-
 ## Integration
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.qmdeve.liquidglass/core?label=Maven%20Central)](https://central.sonatype.com/artifact/com.qmdeve.liquidglass/core)
