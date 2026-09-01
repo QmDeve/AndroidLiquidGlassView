@@ -34,9 +34,6 @@
 
 <img src="https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/image.jpg?raw=true" alt="Image"/>
 
-## Demo 演示
-[下载 Demo](https://github.com/QmDeve/AndroidLiquidGlassView/blob/master/app/release/app-release.apk)
-
 ## 集成
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.qmdeve.liquidglass/core?label=Maven%20Central)](https://central.sonatype.com/artifact/com.qmdeve.liquidglass/core)
