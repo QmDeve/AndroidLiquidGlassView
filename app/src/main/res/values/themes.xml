@@ -1,4 +1,3 @@
 <resources>
-    <style name="Theme.LiquidGlassView" parent="Theme.Material3.DynamicColors.Light.NoActionBar">
-    </style>
+    <style name="Theme.LiquidGlassView" parent="Theme.Material3.DynamicColors.Light.NoActionBar" />
 </resources>

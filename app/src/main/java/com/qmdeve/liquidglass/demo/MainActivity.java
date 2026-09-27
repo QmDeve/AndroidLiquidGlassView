@@ -38,7 +38,6 @@ import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.qmdeve.liquidglass.demo.util.Utils;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,12 +49,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Utils.transparentStatusBar(getWindow());
         Utils.transparentNavigationBar(getWindow());
-
-        new MaterialAlertDialogBuilder(this)
-                .setTitle("Hello")
-                .setMessage(getString(R.string.a2))
-                .setNegativeButton("OK", null)
-                .show();
 
         findViewById(R.id.liquidglassview).setOnClickListener(v -> startActivity(new Intent(this, LiquidGlassViewActivity.class)));
         findViewById(R.id.elasticliquidglassview).setOnClickListener(v -> startActivity(new Intent(this, ElasticLiquidGlassViewActivity.class)));

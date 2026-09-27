@@ -30,8 +30,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="18dp"
-                android:text="@string/custom_background"
-                tools:ignore="RelativeOverlap" />
+                android:text="@string/custom_background"/>
 
             <LinearLayout
                 android:id="@+id/controls"

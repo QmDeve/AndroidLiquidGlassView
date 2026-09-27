@@ -10,5 +10,4 @@
     <string name="tint_alpha">Tint Alpha</string>
     <string name="setTint">Set Tint</string>
     <string name="a1">Your device does not support image selection</string>
-    <string name="a2">AndroidLiquidGlassView uses AGSL, so it currently only supports Android 13+ (API 33) devices\n\nGitHub: https://github.com/QmDeve/AndroidLiquidGlassView\nTelegram Group: https://t.me/QmDeves</string>
 </resources>
