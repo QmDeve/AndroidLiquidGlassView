@@ -35,7 +35,7 @@ Add the dependencies to your module's `build.gradle` file:
 
 ```gradle
 dependencies {
-   implementation 'com.qmdeve.liquidglass:core:1.0.5'
+   implementation 'com.qmdeve.liquidglass:core:1.1.0'
 }
 ```
 

@@ -1,6 +1,4 @@
-.gradle
+/.gradle
 /local.properties
 /.idea
 /build
-/app/release/baselineProfiles
-/app/release/output-metadata.json

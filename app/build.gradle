@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2025-2026 Donny Yale
+ * Copyright (c) 2025-2026 Donny Yang
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +23,7 @@
  *
  * ===========================================
  * Project: AndroidLiquidGlassView
- * Created Date: 2025-11-01
- * Author: Donny Yale
+ * Author: Donny Yang
  * GitHub: https://github.com/QmDeve/AndroidLiquidGlassView
  * WebSite: https://liquidglass.qmdeve.com
  * ===========================================
@@ -36,12 +35,12 @@ plugins {
 
 android {
     namespace 'com.qmdeve.liquidglass.demo'
-    compileSdk { version = release(37) }
+    compileSdk 37
 
     defaultConfig {
         applicationId "com.qmdeve.liquidglass.demo"
-        minSdk { version = release(24) }
-        targetSdk { version = release(37) }
+        minSdk 24
+        targetSdk 37
         versionCode 1
         versionName VERSION
     }
