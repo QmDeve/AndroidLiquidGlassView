@@ -53,8 +53,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 
@@ -65,7 +65,7 @@ dependencies {
 
 if (!project.hasProperty('jitpack')) {
     mavenPublishing {
-        coordinates(GROUP_NAME, ARTIFACT_NAME, VERSION)
+        coordinates('com.qmdeve.liquidglass', 'core', VERSION)
         configure(new AndroidSingleVariantLibrary("release", true, false))
 
         pom {
