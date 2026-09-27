@@ -52,7 +52,7 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
-  publish:
+  release:
     runs-on: ubuntu-latest
     needs: check-tag
     if: needs.check-tag.outputs.version_exists == 'false'
