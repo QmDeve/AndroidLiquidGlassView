@@ -43,7 +43,7 @@ dependencies {
 
 Please refer to the documentation to learn how to use the library
 
-**Documentation: [https://liquidglass.qmdeve.com/](https://liquidglass.qmdeve.com/)**
+**[Documentation](./docs/guide/overview.md)**
 
 ---
 
