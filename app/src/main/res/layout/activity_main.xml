@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.qmdeve.blurview.widget.BlurButtonView
+    <com.qmdeve.blurview.widget.Button
         android:id="@+id/liquidglassview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:buttonTextBold="true"
         app:overlayColor="#0248FB" />
 
-    <com.qmdeve.blurview.widget.BlurButtonView
+    <com.qmdeve.blurview.widget.Button
         android:id="@+id/elasticliquidglassview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         app:buttonTextBold="true"
         app:overlayColor="#0248FB" />
 
-    <com.qmdeve.blurview.widget.BlurButtonView
+    <com.qmdeve.blurview.widget.Button
         android:id="@+id/toucheffectview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         app:buttonTextBold="true"
         app:overlayColor="#0248FB" />
 
-    <com.qmdeve.blurview.widget.BlurButtonView
+    <com.qmdeve.blurview.widget.Button
         android:id="@+id/github"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

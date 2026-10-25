@@ -4,7 +4,7 @@ appcompat = "1.8.0"
 dynamicanimation = "1.1.0"
 material = "1.14.0"
 annotationJvm = "1.11.0"
-qmblurview = "2.0.0-alpha01"
+qmblurview = "2.0.0-alpha02"
 vanniktech = "0.37.0"
 
 [libraries]
